@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="neuromax" content="bio, neuroscience"/>
+    <meta name="description" content="."/>
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <title>Neurozen</title>
+    <style>
+    .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(6, 85, 23, 0); /* Initially transparent */
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    }
+    .content {
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    margin-top: 140px; /* Add margin-top to create space below the header */
+}
+    .header-container.scrolled {
+        background-color: #0c0c3a; /* Color when scrolled */
+    }
+
+    .header-container .head2 h5,
+    .header-container .head2 h6 {
+        color: white; /* Default color for header text */
+        transition: color 0.3s ease;
+    }
+
+    .header-container.scrolled .head2 h5,
+    .header-container.scrolled .head2 h6 {
+        color: rgb(255, 255, 255); /* Color when scrolled */
+    }
+    </style>
+</head>
+<body>
+    <!-- Fullscreen Image Section -->
+    <div class="fullscreen-image" id="fullscreenImage">
+        <h2>Welcome to Neurozen</h2>
+    </div>
+
+    <!-- Navigation and Header -->
+    <div class="header-container" id="headerContainer">
+        <h2>Neurozen.online</h2>
+        <div class="head2">
+            <div class="scientists-container">
+                <h5 id="scientists">Scientists</h5>
+            </div>
+            <div class="articles-container">
+                <h6 id="articles">Articles</h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content" >
+        <p><b>Neurobiology - the science of the brain and its functions.</b></p>
+        <p>Our brain is a really strange thing, whose workings we haven't completely understood yet. The nervous system is a fundamental and intricate network that governs every action, thought, and sensation in the human body. It is often likened to a complex communication system, where various components work in harmony to ensure that the body responds appropriately to internal and external stimuli.</p>
+        
+        <p><b>The main functions of our nervous system are:</b></p>
+        <p>1. Provide rapid communication between your body and your brain.</p>
+        <p>2. Receiving and perceiving special sensations (taste, smell, vision, sounds)</p>
+        <p>3. Respond and adapt to changes between various organs and the outside environment.</p>
+        <p>But first, we'll talk about the structure of the human nervous system:</p>
+        <p><b>Our nervous system is divided into two parts:</b></p>
+        <p><b>1. Central nervous system:</b></p>
+        <p> 1) Brain: The brain processes sensory information, aids in cognition, memory, and decision-making, and coordinates complex behaviors.<br> 2) Spinal Cord: The spinal cord acts as a conduit between the brain and the rest of the body. It also handles certain reflexes independently of the brain, enabling quick responses to stimuli.</p>
+        <p><b>2. Peripheral nervous system</b>:</p>
+        <p>It consists of Motor nerves and Sensory nerves. Motor nerves are further divided into the Somatic and Autonomic parts. The Autonomic nervous system of a human consists of the Sympathetic and Parasympathetic divisions.</p>
+        <img src="img/nervousSYS.png" alt="NS" width="730" height="441" class="rounded-image" />
+        <p><b>The Role of the Nervous System in Maintaining Homeostasis</b><br>
+
+            Homeostasis is the process of maintaining stable internal conditions within the body, such as body temperature, blood sugar levels, water-salt balance, and oxygen levels, despite changes in the external environment. The nervous system plays a key role in coordinating and regulating these processes, providing a fast and precise response to changes and ensuring optimal conditions for the body's functioning.</p>
+    </div>
+
+    <!-- Optional JavaScript to toggle nav links -->
+    <script>
+        // Function to redirect to another page
+        // Function to redirect to another page
+function openAnotherPage(url) {
+    window.location.href = url;
+}
+
+// Event listeners for clicking on selections
+document.getElementById("scientists").addEventListener("click", () => openAnotherPage('escientists.html'));
+document.getElementById("articles").addEventListener("click", () => openAnotherPage('articles.html'));
+
+// Show content and hide fullscreen image on scroll
+window.addEventListener('scroll', function() {
+    const fullscreenImage = document.getElementById('fullscreenImage');
+    const headerContainer = document.getElementById('headerContainer');
+    
+    if (window.scrollY > 0) {
+        fullscreenImage.classList.add('hidden');
+        headerContainer.classList.add('scrolled');
+    } else {
+        fullscreenImage.classList.remove('hidden');
+        headerContainer.classList.remove('scrolled');
+    }
+});
+
+
+    </script>
+</body>
+</html>
